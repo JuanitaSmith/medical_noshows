@@ -3,7 +3,7 @@
 ---
 ## Project 2: Investigate a dataset
 #### Created by: Juanita Smith
-#### Last date: 23 September 2022
+#### Last date: 5 October 2022
 
 ---
 
@@ -15,17 +15,66 @@
 
 ## Project Overview
 This project is completed as part of the 'Data Analyst' nanodegree with Udacity. 
-The dataset,  provided by Kaggle, collects information from 100k medical appointments in Brazil and is focused 
+The dataset, provided by Kaggle, collects information from 100k medical appointments in Brazil and is focused 
 on the question of whether or not patients show up for their appointment. 
 A number of characteristics about the patient are included in each row.
-The goal of the project is to demonstrate the data analyst process (question, wrangle, EDA through visualization, draw conclusion and communicate results) is well understood.
+
+The goal of the project was to demonstrate data analysis skills of questioning, wrangling, exploring, analysing and communicating data using numpy, pandas and matplotlib libraries.
+
+Udacity instructions:
 Conduct own analysis of the dataset and brainstorm what questions the dataset could answer. Use pandas and NumPy to answer the questions most interesting, and create a report sharing the conclusions.
-Idea of the project was not use inferential statistics or machine learning to answer the questions, but to explore the features manually purely with python to practise plotting and data analysis skills
+
+
+Note: Idea of the project was not use inferential statistics or machine learning to answer the questions, but to explore the features manually purely with pandas and numpy to practise plotting and data analysis skills
 
    
 ## Data
 
-Data were supplied by Kaggle through Udacity and can be downloaded from 'https://d17h27t6h515a5.cloudfront.net/topher/2017/October/59dd2e9a_noshowappointments-kagglev2-may-2016/noshowappointments-kagglev2-may-2016.csv.'
+- Data were supplied by Kaggle through Udacity and can be downloaded from [here](https://s3.amazonaws.com/video.udacity-data.com/topher/2018/July/5b57919a_data-set-options/data-set-options.pdf)
+- Read more information about the features directly in Kaggle [here](https://www.kaggle.com/datasets/joniarroba/noshowappointments)
+
+### Data Dictionary
+
+The data contain 14 features:
+
+*1) PatientId:* Identification of a patient
+
+*2) AppointmentID:* Identification of each appointment
+
+*3) Gender:* Male (M) or Female (F).  
+Female is the greater proportion, woman takes way more care of they health in comparison to man.
+
+*4) ScheduledDay:* The date and time the patient setup their appointment
+
+*5) AppointmentDay:* The date of the actual appointment (no time is present)
+
+*6) Age:* How old is the patient.
+
+*7) Neighbourhood:* Location of the hospital where the appointment takes place
+
+*8) Scholarship:* True (1) of False (0).
+
+Indicates whether or not the patient is enrolled in Brasilian welfare program.
+Read more about the [Bolsa Família here](https://en.wikipedia.org/wiki/Bolsa_Fam%C3%ADlia)
+
+*9) Hipertension:* True (1) or False (0)
+Also known as high blood pressure
+
+*10) Diabetes:* True (1) or False (0)
+
+*11) Alcoholism:* True (1) or False (0)
+
+*12) Handcap:* Values 0 - 4
+
+- 0 means patient have no disabilitly, 1 means patient 1 disability, 2 means patient have 2 disabilities and so on
+
+*13) SMS_received:* True (1) or False (0)
+
+- 1 or more messages were sent to the patient
+
+*14) No-show:* True (1) or False (0)
+
+- Be careful about the encoding of the last column: it says ‘No’ if the patient showed up to their appointment, and ‘Yes’ if they did not show up.
 
 
 ## Requirements
@@ -41,7 +90,7 @@ Data were supplied by Kaggle through Udacity and can be downloaded from 'https:/
 
 ## Installation
 
-To clone the repository: https://github.com/JuanitaSmith/ml_capstone_customer_segmentation.git
+To clone the repository: 'https://github.com/JuanitaSmith/medical_noshows.git'
 
 Refer to 'requirements.txt' for all related dependencies and versions used
 

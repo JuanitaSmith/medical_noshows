@@ -3,16 +3,25 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
-def plot_relationships(df, x, y):
+def plot_relationships(df, x, y, figsize=(16, 4), annotation=False):
     """ plot relationships between two variables """
 
     sns.set(style='white', font_scale=1)
-    fig, ax = plt.subplots(figsize=(16, 4))
+    fig, ax = plt.subplots(figsize=figsize)
     g = sns.countplot(data=df, x=x, hue=y, ax=ax)
 
     g.set_xticklabels(g.get_xticklabels(), rotation=90, fontsize=8)
-    g.set_ylabel('Number of patients with {}'.format(y), fontsize=10)
+    g.set_ylabel('Number of appointments'.format(y), fontsize=10)
     g.set_title('Relationship between {} and {}'.format(x, y), fontsize=12)
+
+    # annotate % values on top of bar chart
+    if annotation:
+        for p in ax.patches:
+            txt = str(p.get_height().round(2))
+            txt_x = p.get_x() + 0.1
+            txt_y = p.get_height() + 200
+            ax.text(txt_x, txt_y, txt, fontsize=8)
+
     plt.show()
 
 
@@ -22,7 +31,7 @@ def display_correlations(corr_matrix,
                          dpi=600):
     """ Shows the top correlated features in a more condense triangle"""
 
-    sns.set(style='white', font_scale=3)
+    sns.set(style='white', font_scale=1)
 
     # display shows all of a dataframe
     plt.subplots(figsize=figsize, dpi=dpi)
@@ -54,7 +63,7 @@ def display_correlations(corr_matrix,
     plt.show()
 
 
-def plot_proportions(df, columns, y, sort_ascending=False):
+def plot_proportions(df, columns, y, sort_ascending=False, annotation=False):
     """plot a bar chart for each column showing proportional relationship with a binary indicator
 
     inputs:
@@ -66,6 +75,7 @@ def plot_proportions(df, columns, y, sort_ascending=False):
 
     """
 
+    sns.set(style='white', font_scale=1)
     for col in columns:
 
         # no plot is needed for the binary indicator
@@ -85,14 +95,14 @@ def plot_proportions(df, columns, y, sort_ascending=False):
         title = ('Relationship between {} and {}'.format(col, y))
         g = sns.catplot(x=col, y='percentage', data=data, orient='v', kind='bar').set(title=title)
 
-        # control figure size so we don't get big ugly fat barcharts
+        # control figure size, so we don't get big ugly fat bar charts
         if df[col].nunique() < 4:
             g.fig.set_size_inches(3, 2)
         else:
             g.fig.set_size_inches(15, 4)
 
         # annotate % values on top of bar chart
-        if data.shape[0] < 30:
+        if annotation and data.shape[0] < 30:
             for p in g.ax.patches:
                 txt = str(p.get_height().round(2)) + '%'
                 txt_x = p.get_x()
