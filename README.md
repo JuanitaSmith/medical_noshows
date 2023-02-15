@@ -15,13 +15,13 @@
 
 ## Project Overview
 This project is completed as part of the 'Data Analyst' nanodegree with Udacity. 
-The dataset, provided by Kaggle, collects information from 100k medical appointments in Brazil and is focused 
+The dataset, provided by Kaggle, collects information from 100k medical appointments in Brazil. It is focused 
 on the question of whether or not patients show up for their appointment. 
 A number of characteristics about the patient are included in each row.
 
 The goal of the project was to demonstrate data analysis skills of questioning, wrangling, exploring, analysing and communicating data using numpy, pandas and matplotlib libraries.
 
-Udacity instructions:
+Udacity's instructions:
 Conduct own analysis of the dataset and brainstorm what questions the dataset could answer. Use pandas and NumPy to answer the questions most interesting, and create a report sharing the conclusions.
 
 
